@@ -17,6 +17,21 @@ public class LockSystem : MonoBehaviour
         {
             case "Player":
                 ui.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
+        }
+    }
+    public void OnCollisionExit(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Player":
+                ui.SetActive(false);
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 break;
         }
     }

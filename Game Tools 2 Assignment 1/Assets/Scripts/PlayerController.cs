@@ -122,12 +122,18 @@ public class PlayerController : MonoBehaviour
                 pov = true;
                 perspective.SetActive(true);
                 cam.SetActive(false);
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else
             {
                 pov = false;
                 cam.SetActive(true);
                 perspective.SetActive(false);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
 
